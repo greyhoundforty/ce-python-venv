@@ -27,6 +27,6 @@ try:
     print("Testing Python virtualenv build works in CE at: " + deployTimestamp)
     print("Attempting to use LogDNA logger")
     log.warning("Testing warn message")
-    log("Python Virtualenv test passed and this should show up under a Debug error column in the UI.")
+    log.debug("Python Virtualenv test passed and this should show up under a Debug error column in the UI.")
 except Exception as e:
     print("Python Virtualenv test failed. Error: " + str(e))
