@@ -6,11 +6,10 @@ from datetime import datetime
 # def logDnaLogger():
 key = os.environ.get('LOGDNA_INGESTION_KEY')
 log = logging.getLogger('logdna')
-log.setLevel(logging.INFO)
+log.setLevel(logging.TESTING)
 
 options = {
     'env': 'dev',
-    'index_meta': True,
     'tags': 'ce-virtualenv',
     'url': 'https://logs.us-south.logging.cloud.ibm.com/logs/ingest',
     'log_error_response': True
@@ -25,6 +24,9 @@ log.addHandler(logger)
 try:
     # log = logDnaLogger()
     deployTimestamp = datetime.now().strftime("%Y-%m-%d:%H:%M:%S")
-    log.warn("Testing Python virtualenv build works in CE at: " + deployTimestamp)
+    print("Testing Python virtualenv build works in CE at: " + deployTimestamp)
+    print("Attempting to use LogDNA logger")
+    log.warn("Testing warn message")
+    log("Python Virtualenv test passed and this should show up under a custom error column in the UI.")
 except Exception as e:
     print("Python Virtualenv test failed. Error: " + str(e))
