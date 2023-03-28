@@ -12,7 +12,7 @@ def logDnaLogger():
         'env': 'code-engine',
         'index_meta': True,
         'tags': 'ce-virtualenv',
-        'url': 'https://logs.private.us-south.logging.cloud.ibm.com/logs/ingest',
+        'url': 'https://logs.us-south.logging.cloud.ibm.com/logs/ingest',
         'log_error_response': True
     }
 
